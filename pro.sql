@@ -1,4 +1,3 @@
-
 -- Table EMPLOYE
 INSERT INTO Employe (idEmp, nom, prenom, poste) VALUES
 (1, 'amrani', 'najwa', 'Developpeur'),
@@ -50,7 +49,7 @@ FROM Tache
 WHERE idProjet = 98
 AND etat = 'Terminée';
 
--- 7) Projets مع المسؤول ديالهم
+-- 7) Projets 
 SELECT p.titre, p.dateDeb, p.dateFin,
        e.nom AS nomChef,
        e.prenom AS prenomChef
@@ -58,14 +57,14 @@ FROM Projet p
 JOIN Employe e
 ON p.idChef = e.idEmp;
 
--- 8) تاش ديال projet "Site E-commerce Beauty"
+-- 8)  projet "Site E-commerce Beauty"
 SELECT t.*
 FROM Tache t
 JOIN Projet p
 ON t.idProjet = p.idProjet
 WHERE p.titre = 'Site E-commerce Beauty';
 
--- 9) عدد التاش اللي تسالات فـ هاد المشروع
+-- 9)
 SELECT COUNT(*) AS nbTachesTerminees
 FROM Tache t
 JOIN Projet p
@@ -73,27 +72,29 @@ ON t.idProjet = p.idProjet
 WHERE p.titre = 'Site E-commerce Beauty'
 AND t.etat = 'Terminée';
 
--- 10) المشاريع اللي تسالات فـ 2025
+-- 10) 
 SELECT COUNT(*) AS projetsTermines2025
 FROM Projet
 WHERE YEAR(dateFin) = 2025;
 
--- تغيير تاريخ نهاية المشروع 234
+-- nihayt l projet
 UPDATE Projet
 SET dateFin = '2026-05-16'
 WHERE idProjet = 234;
 
--- تغيير حالة المهمة 98 إلى "Terminée"
+-- تtayghir hala 98 إلى "Terminée"
 UPDATE Tache
 SET etat = 'Terminée'
 WHERE idTache = 98;
--- حذف المهام غير المبتدأة فالمشروع 123
+delet 123
 DELETE FROM Tache
 WHERE idProjet = 123
 AND etat = 'Non commencée';
-
--- حذف الموظف ALAMI AHMED
+-- delete  ALAMI AHMED
 DELETE FROM Employe
 WHERE nom = 'ALAMI'
 AND prenom = 'Ahmed';
+
+
+
 
