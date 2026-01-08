@@ -82,7 +82,7 @@ UPDATE Projet
 SET dateFin = '2026-05-16'
 WHERE idProjet = 234;
 
--- تtayghir hala 98 إلى "Terminée"
+-- tayghir hala "Terminée"
 UPDATE Tache
 SET etat = 'Terminée'
 WHERE idTache = 98;
@@ -94,6 +94,7 @@ AND etat = 'Non commencée';
 DELETE FROM Employe
 WHERE nom = 'ALAMI'
 AND prenom = 'Ahmed';
+
 
 
 
